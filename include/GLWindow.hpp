@@ -11,9 +11,9 @@ class GLWindow
 {
 protected:
     Rect rect;
+	std::string name;
     int subwindows, initPosx, initPosy, main;
     unsigned int mode;
-    std::string name;
     void initMainwnd(int argc, std::string argv);
 
     //this methods must be implimented

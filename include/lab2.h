@@ -27,15 +27,18 @@ private:
     GLfloat xTra, yTra, zTra, nSca;
     GLint yVal;
     //for scene objects
-    GLfloat stacks, slices;
+    GLint stacks, slices;
     GLfloat xCenterCylinder, yCenterCylinder, zCenterCylinder, baseRad, topRad, cyheight;
     GLfloat xCenterConus, yCenterConus, zCenterConus, conusRad, coheight;
     GLfloat xCenterSphere, yCenterSphere, zCenterSphere, spRad;
     GLUquadric* cylinder;
     GLUquadric* sphere;
     GLUquadric* conus;
+	//texture
     Image* image;
-    GLuint _textureId;
+	Image* img;
+	Image* img1;
+    GLuint _textureId[3];
 private:
     //additional methods
     void draw(void);

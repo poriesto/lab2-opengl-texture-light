@@ -1,7 +1,6 @@
 CC=clang++
 CFLAGS=-std=c++11 -Wall -o3 -g -Weverything
 LIBS=-lGL -lGLU -lglut
-INC_PATH=/usr/include/GL
 
 BUILD_DIR  := bin
 SOURCE_DIR := src

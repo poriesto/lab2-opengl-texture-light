@@ -28,8 +28,11 @@ int toInt(const char* bytes)
 //Converts a two-character array to a short, using little-endian form
 short toShort(const char* bytes)
 {
-    return (short)(((unsigned char)bytes[1] << 8) |
-                   (unsigned char)bytes[0]);
+	 short a = static_cast<short>(
+			 static_cast<unsigned char>(bytes[1] << 8) |
+			 static_cast<unsigned char>(bytes[0])
+			 );
+	 return a;
 }
 
 //Reads the next four bytes as an integer, using little-endian form
