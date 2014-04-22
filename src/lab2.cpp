@@ -67,7 +67,7 @@ void lab2::initGL(void)
     image  = loadBMP("earth.bmp");
 	img = loadBMP("1.BMP");
 	img1 = loadBMP("earth.bmp");
-	_textureId[0]  = loadTexture(image);
+	_textureId[0] = loadTexture(image);
 	_textureId[1] = loadTexture(img);
 	_textureId[2] = loadTexture(img1);
 
@@ -272,6 +272,20 @@ int lab2::spot(double a, double b, double c, double d, double e, double f)
 
     return 0;
 }
+
+//some methods without implements
+void lab2::resize(int w, int h)
+{}
+void lab2::createsubwindows()
+{}
+void lab2::mouse(int button, int state, int x, int y)
+{}
+void lab2::motion(int x, int y)
+{}
+void lab2::passmotion(int x, int y)
+{}
+void lab2::idlefunc()
+{}
 
 GLuint loadTexture(Image* image)
 {

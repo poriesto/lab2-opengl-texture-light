@@ -12,15 +12,15 @@ public:
     lab2(int _subwindows, unsigned int _mode);
     virtual ~lab2();
 protected:
-    inline void resize(int w, int h) {}
+    inline void resize(int w, int h);
     inline void initGL(void);
-    inline void createsubwindows(void) {}
+    inline void createsubwindows(void);
     inline void render(void);
     inline void keyboard(unsigned char key, int x, int y);
-    inline void mouse(int button, int state, int x, int y) {}
-    inline void motion(int x, int y) {}
-    inline void passmotion(int x, int y) {}
-    inline void idlefunc(void) {}
+    inline void mouse(int button, int state, int x, int y);
+    inline void motion(int x, int y);
+    inline void passmotion(int x, int y);
+    inline void idlefunc(void);
 private:
     //camera
     GLfloat xRot, yRot, zRot;

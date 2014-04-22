@@ -27,45 +27,18 @@ protected:
     virtual void passmotion(int x, int y) = 0;
     virtual void idlefunc(void) = 0;
 
-	void close(void)
-	{
-		glutDestroyWindow(main);
-	}
+	void close(void);
 
     //dont touch this methods
 private:
-    static void Render(void)
-    {
-        app->render();
-    }
-    static void Mice(int button, int state, int x, int y)
-    {
-        app->mouse(button, state, x, y);
-        glutPostWindowRedisplay(app->main);
-    }
-    static void Idlefunc(void)
-    {
-        app->idlefunc();
-    }
-    static void Keyboard(unsigned char key, int x, int y)
-    {
-        app->keyboard(key, x, y);
-        glutPostWindowRedisplay(app->main);
-    }
-    static void Motion(int x, int y)
-    {
-        app->motion(x, y);
-    }
-    static void PassiveMotion(int x, int y)
-    {
-        app->passmotion(x, y);
-    }
-    static void Resize(int w, int h)
-    {
-        app->resize(w, h);
-        glutPostWindowRedisplay(app->main);
-    }
-    static void Visible(int vis) {}
+    static void Render(void);
+    static void Mice(int button, int state, int x, int y);
+    static void Idlefunc(void);
+    static void Keyboard(unsigned char key, int x, int y);
+    static void Motion(int x, int y);
+    static void PassiveMotion(int x, int y);
+    static void Resize(int w, int h);
+    static void Visible(int vis);
 public:
     GLWindow() {}
     virtual ~GLWindow() {}
