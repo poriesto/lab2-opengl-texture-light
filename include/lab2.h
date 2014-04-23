@@ -9,7 +9,7 @@ GLuint loadTexture(Image* image);
 class lab2:public GLWindow
 {
 public:
-    lab2(int _subwindows, unsigned int _mode);
+    lab2(int _subwindows = 0, unsigned int _mode = GLUT_DOUBLE|GLUT_RGBA);
     virtual ~lab2();
 protected:
     inline void resize(int w, int h);
@@ -25,7 +25,7 @@ private:
     //camera
     GLfloat xRot, yRot, zRot;
     GLfloat xTra, yTra, zTra, nSca;
-    GLint yVal;
+    GLfloat yVal, yVal1, yVal2;
     //for scene objects
     GLint stacks, slices;
     GLfloat xCenterCylinder, yCenterCylinder, zCenterCylinder, baseRad, topRad, cyheight;
@@ -34,10 +34,10 @@ private:
     GLUquadric* cylinder;
     GLUquadric* sphere;
     GLUquadric* conus;
-	//texture
+    //texture
     Image* image;
-	Image* img;
-	Image* img1;
+    Image* img;
+    Image* img1;
     GLuint _textureId[3];
 private:
     //additional methods
@@ -47,7 +47,9 @@ private:
     void rotate(int dir);
     void scale(int scale);
     void disableLight(void);
-    int spot(double a, double b, double c, double d, double e, double f);
+    void spot(double a, double b, double c, double d, double e, double f);
+	void spot2(double a, double b, double c, double d, double e, double f);
+	void spot3(double a, double b, double c, double d, double e, double f);
 };
 
 #endif // LAB2_H

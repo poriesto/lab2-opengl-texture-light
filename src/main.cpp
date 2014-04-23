@@ -12,17 +12,16 @@ int main()
 {
     string name = "lab2", argv = "-w GLUT_RGB GLUT_DEPTH";
     int argc = 3;
-    unsigned int mode = GLUT_DOUBLE|GLUT_RGBA;
+    //unsigned int mode = GLUT_DOUBLE|GLUT_RGBA;
     Rect rct;
     rct.w = 1080; rct.h = 720;
-    lab2* lab = new lab2(0, mode);
-    cout << "Program launched" << endl;
+    lab2* lab = new lab2();
+	cout << "Program launched" << endl;
 
     lab->setname(name);
     lab->setinitPosition(10, 10);
     lab->setwidthheight(rct);
     lab->show(argc, argv);
-	std::cout << "Wnd name is " << lab->getName() << std::endl;
 
     return 0;
 }

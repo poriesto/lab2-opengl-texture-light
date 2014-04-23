@@ -63,3 +63,46 @@ void GLWindow::Resize(int w, int h)
     }
 void GLWindow::Visible(int vis) 
 {}
+
+void GLWindow::setname(std::string _name)
+{
+	name = _name;
+}
+
+void GLWindow::setinitPosition(int x, int y)
+{
+	initPosx = x; initPosy = y;
+}
+
+void GLWindow::setwidthheight(Rect _rect)
+{
+	rect = _rect;
+}
+
+void GLWindow::setwidthheight(int w, int h)
+{
+	rect.w = w; rect.h = h;
+}
+
+std::string GLWindow::getName(void)
+{
+	return name;
+}
+
+Rect GLWindow::getRect(void)
+{
+	return rect;
+}
+
+void GLWindow::show(int argc, std::string argv)
+{
+	initMainwnd(argc, argv);
+	initGL();
+	glutMainLoop();
+}
+
+GLWindow::GLWindow()
+{}
+
+GLWindow::~GLWindow()
+{}

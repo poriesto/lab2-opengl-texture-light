@@ -14,7 +14,7 @@ lab2::lab2(int _subwindows, unsigned int _mode)
     //ctor
     subwindows = _subwindows;
     mode = _mode;
-    yVal = 1.0;
+    yVal = 1.0; yVal1 = 1.5; yVal2 = 2.0;
 }
 
 lab2::~lab2()
@@ -26,7 +26,7 @@ void lab2::render(void)
 {
     std::cout << "Render" << std::endl;
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	GLfloat material_diffuse[] = {1.0, 1.0, 1.0, 1.0};
+    GLfloat material_diffuse[] = {1.0, 1.0, 1.0, 1.0};
     glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, material_diffuse);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
@@ -73,6 +73,8 @@ void lab2::initGL(void)
 
     glEnable(GL_LIGHTING);
     glEnable(GL_LIGHT0);
+	glEnable(GL_LIGHT1);
+	glEnable(GL_LIGHT2);
     glLightModelf(GL_LIGHT_MODEL_TWO_SIDE, GL_TRUE);
     glViewport(0,0, rect.w, rect.h);
 
@@ -172,6 +174,9 @@ void lab2::keyboard(unsigned char key, int x, int y)
     case 'o':
         yVal++;
         break;
+	case 'p':
+		yVal--;
+		break;
     case 't':
         scale(1);
         break;
@@ -229,7 +234,7 @@ void lab2::draw(void)
     gluCylinder(conus, conusRad, 0, coheight, slices, stacks);
 }
 
-int lab2::spot(double a, double b, double c, double d, double e, double f)
+void lab2::spot(double a, double b, double c, double d, double e, double f)
 {
     /*
     a, b and c -- x, y and z co-ordinates for light position
@@ -269,8 +274,63 @@ int lab2::spot(double a, double b, double c, double d, double e, double f)
     glLightf(GL_LIGHT0,GL_SPOT_EXPONENT,2.0);
     glLightfv(GL_LIGHT0,GL_SPOT_DIRECTION,spotDir);
     glEnable(GL_COLOR_MATERIAL);
+}
 
-    return 0;
+void lab2::spot2(double a, double b, double c, double d, double e, double f)
+{
+    /*
+    a, b and c -- x, y and z co-ordinates for light position
+    d, e and f -- x, y and z co-ordinates for spot light position
+    */
+	GLfloat mat_specular[] = 
+	{ static_cast<GLfloat>(0.3),
+	  static_cast<GLfloat>(1.0),
+	  static_cast<GLfloat>(0.3),
+	  static_cast<GLfloat>(1.0)
+   	};
+    GLfloat mat_shininess[] = { 30.0 };
+    GLfloat light_position[] =
+   	{
+		static_cast<GLfloat>(a),
+		static_cast<GLfloat>(b),
+		static_cast<GLfloat>(c),
+		static_cast<GLfloat>(1.0)
+   	};
+    GLfloat spotDir[] = 
+	{
+		static_cast<GLfloat>(d),
+		static_cast<GLfloat>(e),
+		static_cast<GLfloat>(f)
+	};
+ 
+}
+
+void lab2::spot3(double a, double b, double c, double d, double e, double f)
+{
+    /*
+    a, b and c -- x, y and z co-ordinates for light position
+    d, e and f -- x, y and z co-ordinates for spot light position
+    */
+ 	GLfloat mat_specular[] = 
+	{ static_cast<GLfloat>(0.3),
+	  static_cast<GLfloat>(1.0),
+	  static_cast<GLfloat>(0.3),
+	  static_cast<GLfloat>(1.0)
+   	};
+    GLfloat mat_shininess[] = { 30.0 };
+    GLfloat light_position[] =
+   	{
+		static_cast<GLfloat>(a),
+		static_cast<GLfloat>(b),
+		static_cast<GLfloat>(c),
+		static_cast<GLfloat>(1.0)
+   	};
+    GLfloat spotDir[] = 
+	{
+		static_cast<GLfloat>(d),
+		static_cast<GLfloat>(e),
+		static_cast<GLfloat>(f)
+	};
 }
 
 //some methods without implements
@@ -289,7 +349,7 @@ void lab2::idlefunc()
 
 GLuint loadTexture(Image* image)
 {
-	std::cout << "Texture from image loading" << std::endl;
+    std::cout << "Texture from image loading" << std::endl;
     GLuint textureId;
 
     glGenTextures(1, &textureId); //Make room for our texture
@@ -306,6 +366,6 @@ GLuint loadTexture(Image* image)
                  //as unsigned numbers
                  image->pixels);               //The actual pixel data
 
-    return textureId; //Returns the id of the texture
+   return textureId; //Returns the id of the texture
 
 }

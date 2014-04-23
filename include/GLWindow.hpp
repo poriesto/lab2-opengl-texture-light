@@ -40,44 +40,17 @@ private:
     static void Resize(int w, int h);
     static void Visible(int vis);
 public:
-    GLWindow() {}
-    virtual ~GLWindow() {}
+    GLWindow();
+    virtual ~GLWindow();
 
     //seters
-    void setname(std::string _name)
-    {
-        name = _name;
-    }
-    void setinitPosition(int x, int y)
-    {
-        initPosx = x;
-        initPosy = y;
-    }
-    void setwidthheight(int w, int h)
-    {
-        rect.w = w;
-        rect.h = h;
-    }
-    void setwidthheight(Rect _rect)
-    {
-        rect = _rect;
-    }
-
+    void setname(std::string _name);
+    void setinitPosition(int x, int y);
+    void setwidthheight(int w, int h);
+    void setwidthheight(Rect _rect);
     //geters
-    std::string getName(void)
-    {
-        return name;
-    }
-    Rect getRect(void)
-    {
-        return rect;
-    }
-
+    std::string getName(void);
+    Rect getRect(void);
     //show the window
-    void show(int argc, std::string argv)
-    {
-        initMainwnd(argc , argv);
-        initGL();
-        glutMainLoop();
-    }
+    void show(int argc, std::string argv);
 };
