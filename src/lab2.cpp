@@ -64,9 +64,9 @@ void lab2::initGL(void)
     spRad = 1.0;
     sphere = gluNewQuadric();
 
-    image  = loadBMP("earth.bmp");
-	img = loadBMP("1.BMP");
-	img1 = loadBMP("earth.bmp");
+    image  = loadBMP("texture1.bmp");
+	img = loadBMP("texture2.bmp");
+	img1 = loadBMP("texture3.bmp");
 	_textureId[0] = loadTexture(image);
 	_textureId[1] = loadTexture(img);
 	_textureId[2] = loadTexture(img1);
