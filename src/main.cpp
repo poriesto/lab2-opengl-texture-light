@@ -14,7 +14,7 @@ int main()
     int argc = 3;
     //unsigned int mode = GLUT_DOUBLE|GLUT_RGBA;
     Rect rct;
-    rct.w = 1080; rct.h = 720;
+    rct.w = 640; rct.h = 480;
     lab2* lab = new lab2();
 	cout << "Program launched" << endl;
 
