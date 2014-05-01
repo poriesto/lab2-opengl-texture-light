@@ -172,10 +172,10 @@ void lab2::keyboard(unsigned char key, int x, int y)
         rotate(4);
         break;
     case 'o':
-        yVal++;
+        yVal = yVal + 0.5;
         break;
 	case 'p':
-		yVal--;
+		yVal = yVal - 0.5;
 		break;
     case 't':
         scale(1);
@@ -270,7 +270,7 @@ void lab2::spot(double a, double b, double c, double d, double e, double f)
     glMaterialfv(GL_FRONT, GL_SHININESS, mat_shininess);
     
 	// Definig spotlight attributes
-    glLightf(GL_LIGHT0,GL_SPOT_CUTOFF,95.0);
+    glLightf(GL_LIGHT0,GL_SPOT_CUTOFF,100.0);
     glLightf(GL_LIGHT0,GL_SPOT_EXPONENT,2.0);
     glLightfv(GL_LIGHT0,GL_SPOT_DIRECTION,spotDir);
     glEnable(GL_COLOR_MATERIAL);
