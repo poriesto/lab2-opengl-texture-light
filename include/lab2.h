@@ -28,9 +28,13 @@ private:
     GLfloat yVal, yVal1, yVal2;
     //for scene objects
     GLint stacks, slices;
-    GLfloat xCenterCylinder, yCenterCylinder, zCenterCylinder, baseRad, topRad, cyheight;
-    GLfloat xCenterConus, yCenterConus, zCenterConus, conusRad, coheight;
-    GLfloat xCenterSphere, yCenterSphere, zCenterSphere, spRad;
+	//cylinder
+    GLfloat xCenterCylinder, yCenterCylinder, zCenterCylinder;
+   	GLfloat baseRad, topRad, cyheight;
+    //conus
+	GLfloat xCenterConus, yCenterConus, zCenterConus, conusRad, coheight;
+    //sphere
+	GLfloat xCenterSphere, yCenterSphere, zCenterSphere, spRad;
     GLUquadric* cylinder;
     GLUquadric* sphere;
     GLUquadric* conus;
