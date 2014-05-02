@@ -100,15 +100,19 @@ void lab2::moveCamera(int dir)
 {
     switch(dir) {
     case 1:
+		std::cout << "Move camera to front" << std::endl;
         yTra += 0.05;
         break;
     case 2:
+		std::cout << "Move camera to back" << std::endl;
         yTra -= 0.05;
         break;
     case 3:
+		std::cout << "Move camera to left" << std::endl;
         xTra -= 0.05;
         break;
     case 4:
+		std::cout << "Move camera to right" << std::endl;
         xTra += 0.05;
         break;
     }
