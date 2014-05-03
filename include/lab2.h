@@ -25,19 +25,20 @@ private:
     //camera
     GLfloat xRot, yRot, zRot;
     GLfloat xTra, yTra, zTra, nSca;
-    GLfloat yVal, yVal1, yVal2;
+    //light
+	GLfloat yVal, yVal1, yVal2;
     //for scene objects
     GLint stacks, slices;
 	//cylinder
     GLfloat xCenterCylinder, yCenterCylinder, zCenterCylinder;
    	GLfloat baseRad, topRad, cyheight;
+	GLUquadric* cylinder;
     //conus
 	GLfloat xCenterConus, yCenterConus, zCenterConus, conusRad, coheight;
-    //sphere
-	GLfloat xCenterSphere, yCenterSphere, zCenterSphere, spRad;
-    GLUquadric* cylinder;
-    GLUquadric* sphere;
     GLUquadric* conus;
+	//sphere
+	GLfloat xCenterSphere, yCenterSphere, zCenterSphere, spRad;
+    GLUquadric* sphere;
     //texture
     Image* image;
     Image* img;

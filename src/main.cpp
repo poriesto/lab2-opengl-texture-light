@@ -12,10 +12,10 @@ int main()
 {
     string name = "lab2", argv = "-w GLUT_RGB GLUT_DEPTH";
     int argc = 3;
-    //unsigned int mode = GLUT_DOUBLE|GLUT_RGBA;
+    unsigned int mode = GLUT_DOUBLE|GLUT_RGBA;
     Rect rct;
     rct.w = 640; rct.h = 480;
-    lab2* lab = new lab2();
+    lab2* lab = new lab2(0, mode);
 	cout << "Program launched" << endl;
 
     lab->setname(name);
