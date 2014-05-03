@@ -11,16 +11,13 @@
 
 lab2::lab2(int _subwindows, unsigned int _mode)
 {
-    //ctor
     subwindows = _subwindows;
     mode = _mode;
     yVal = 1.0; yVal1 = 1.5; yVal2 = 2.0;
 }
 
 lab2::~lab2()
-{
-    //dtor
-}
+{}
 
 void lab2::render(void)
 {
@@ -50,16 +47,19 @@ void lab2::initGL(void)
     xRot = -30; yRot = 0; zRot = 0; 
 	xTra = 0; yTra = 0; zTra = 0;
     nSca = 0.2f;
-
+	
+	std::cout << "Setup params for cylinder" << std::endl;
     stacks = 25; slices = 25;
     xCenterCylinder = 0; yCenterSphere = 0; zCenterCylinder = 0;
     baseRad = 1.0; topRad = 1.0; cyheight = 3;
     cylinder = gluNewQuadric();
 
+	std::cout << "Setup params for conus" << std::endl;
     xCenterConus = 0; yCenterConus = 0; zCenterConus = 3;
     conusRad = 1.0; coheight = 3;
     conus = gluNewQuadric();
 
+	std::cout << "Setup params for sphere" << std::endl;
     xCenterSphere = 0; yCenterSphere = 0; zCenterSphere = 0;
     spRad = 1.0;
     sphere = gluNewQuadric();
