@@ -63,9 +63,12 @@ void lab2::initGL(void)
     xCenterSphere = 0; yCenterSphere = 0; zCenterSphere = 0;
     spRad = 1.0;
     sphere = gluNewQuadric();
-
+	
+	std::cout << "load image from file texture1.bmp" << std::endl;
     image  = loadBMP("texture1.bmp");
+	std::cout << "load image from file texture2.bmp" << std::endl;
 	img = loadBMP("texture2.bmp");
+	std::cout << "load image from file texture3.bmp" << std::endl;
 	img1 = loadBMP("texture3.bmp");
 	_textureId[0] = loadTexture(image);
 	_textureId[1] = loadTexture(img);
@@ -353,7 +356,7 @@ void lab2::idlefunc()
 
 GLuint loadTexture(Image* image)
 {
-    std::cout << "Texture from image loading" << std::endl;
+    std::cout << "Texture from image" << image << " loading" << std::endl;
     GLuint textureId;
 
     glGenTextures(1, &textureId); //Make room for our texture
