@@ -220,6 +220,7 @@ void lab2::draw(void)
     gluQuadricTexture(conus, GL_TRUE);
 	
 	//draw cylinder
+	std::cout << "Draw cylinder" << std::endl;
 	glBindTexture(GL_TEXTURE_2D, _textureId[0]);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);	
@@ -227,6 +228,7 @@ void lab2::draw(void)
     gluCylinder(cylinder, baseRad, topRad, cyheight, slices, stacks);
 
 	//draw sphere
+	std::cout << "Draw sphere" << std::endl;
     glBindTexture(GL_TEXTURE_2D, _textureId[1]);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);	
@@ -234,6 +236,7 @@ void lab2::draw(void)
 	gluSphere(sphere, spRad, slices, stacks);
 
 	//draw conus
+	std::cout << "Draw conus" << std::endl;
 	glBindTexture(GL_TEXTURE_2D, _textureId[2]);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
