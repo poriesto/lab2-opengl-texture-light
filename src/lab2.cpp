@@ -286,62 +286,11 @@ void lab2::spot(double a, double b, double c, double d, double e, double f)
     glEnable(GL_COLOR_MATERIAL);
 }
 
-void lab2::spot2(double a, double b, double c, double d, double e, double f)
-{
-    /*
-    a, b and c -- x, y and z co-ordinates for light position
-    d, e and f -- x, y and z co-ordinates for spot light position
-    */
-	GLfloat mat_specular[] = 
-	{ static_cast<GLfloat>(0.3),
-	  static_cast<GLfloat>(1.0),
-	  static_cast<GLfloat>(0.3),
-	  static_cast<GLfloat>(1.0)
-   	};
-    GLfloat mat_shininess[] = { 30.0 };
-    GLfloat light_position[] =
-   	{
-		static_cast<GLfloat>(a),
-		static_cast<GLfloat>(b),
-		static_cast<GLfloat>(c),
-		static_cast<GLfloat>(1.0)
-   	};
-    GLfloat spotDir[] = 
-	{
-		static_cast<GLfloat>(d),
-		static_cast<GLfloat>(e),
-		static_cast<GLfloat>(f)
-	};
- 
-}
+/*void lab2::spot2(double a, double b, double c, double d, double e, double f)
+{}*/
 
-void lab2::spot3(double a, double b, double c, double d, double e, double f)
-{
-    /*
-    a, b and c -- x, y and z co-ordinates for light position
-    d, e and f -- x, y and z co-ordinates for spot light position
-    */
- 	GLfloat mat_specular[] = 
-	{ static_cast<GLfloat>(0.3),
-	  static_cast<GLfloat>(1.0),
-	  static_cast<GLfloat>(0.3),
-	  static_cast<GLfloat>(1.0)
-   	};
-    GLfloat mat_shininess[] = { 30.0 };
-    GLfloat light_position[] =
-   	{
-		static_cast<GLfloat>(a),
-		static_cast<GLfloat>(b),
-		static_cast<GLfloat>(c),
-		static_cast<GLfloat>(1.0)
-   	};
-    GLfloat spotDir[] = 
-	{
-		static_cast<GLfloat>(d),
-		static_cast<GLfloat>(e),
-		static_cast<GLfloat>(f)
-	};
-}
+/*void lab2::spot3(double a, double b, double c, double d, double e, double f)
+{}*/
 
 //some methods without implements
 void lab2::resize(int w, int h)

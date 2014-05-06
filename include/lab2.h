@@ -6,7 +6,7 @@
 
 GLuint loadTexture(Image* image);
 
-class lab2:public GLWindow
+class lab2 : public GLWindow
 {
 public:
     lab2(int _subwindows = 0, unsigned int _mode = GLUT_DOUBLE|GLUT_RGBA);
@@ -25,6 +25,9 @@ private:
     //camera
     GLfloat xRot, yRot, zRot;
     GLfloat xTra, yTra, zTra, nSca;
+	GLUquadric* cylinder;
+	GLUquadric* sphere;
+   	GLUquadric* conus;
     //light
 	GLfloat yVal, yVal1, yVal2;
     //for scene objects
@@ -32,13 +35,10 @@ private:
 	//cylinder
     GLfloat xCenterCylinder, yCenterCylinder, zCenterCylinder;
    	GLfloat baseRad, topRad, cyheight;
-	GLUquadric* cylinder;
     //conus
 	GLfloat xCenterConus, yCenterConus, zCenterConus, conusRad, coheight;
-    GLUquadric* conus;
 	//sphere
 	GLfloat xCenterSphere, yCenterSphere, zCenterSphere, spRad;
-    GLUquadric* sphere;
     //texture
     Image* image;
     Image* img;
@@ -53,8 +53,8 @@ private:
     void scale(int scale);
     void disableLight(void);
     void spot(double a, double b, double c, double d, double e, double f);
-	void spot2(double a, double b, double c, double d, double e, double f);
-	void spot3(double a, double b, double c, double d, double e, double f);
+	//void spot2(double a, double b, double c, double d, double e, double f);
+	//void spot3(double a, double b, double c, double d, double e, double f);
 };
 
 #endif // LAB2_H

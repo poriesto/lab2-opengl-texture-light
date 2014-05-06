@@ -15,6 +15,7 @@ protected:
     int subwindows, initPosx, initPosy, main;
     unsigned int mode;
     void initMainwnd(int argc, std::string argv);
+	void close(void);
 
     //this methods must be implimented
     virtual void resize(int w, int h) = 0;
@@ -26,8 +27,6 @@ protected:
     virtual void motion(int x, int y) = 0;
     virtual void passmotion(int x, int y) = 0;
     virtual void idlefunc(void) = 0;
-
-	void close(void);
 
     //dont touch this methods
 private:
