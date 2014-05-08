@@ -53,8 +53,8 @@ private:
     void scale(int scale);
     void disableLight(void);
     void spot(double a, double b, double c, double d, double e, double f);
-	//void spot2(double a, double b, double c, double d, double e, double f);
-	//void spot3(double a, double b, double c, double d, double e, double f);
+	void spot2(double a, double b, double c, double d, double e, double f);
+	void spot3(double a, double b, double c, double d, double e, double f);
 };
 
 #endif // LAB2_H
