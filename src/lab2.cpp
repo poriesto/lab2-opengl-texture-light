@@ -36,7 +36,8 @@ void lab2::render(void)
     glPushMatrix();
     spot(yVal,1.0,1.5,1.0,1.0,1.0);
 	spot2(yVal1,2.0,3.0,2.0,2.0,2.0);
-	spot3(yVal2,3.0,4.0,3.0,3.0,3.0);
+	spot3(yVal2,3.0,0.0,2.0,2.0,2.0);
+	//spot3(yVal2,0.0,2.0,3.0,3.0,3.0);
     draw();
 
     glPopMatrix();
@@ -192,6 +193,21 @@ void lab2::keyboard(unsigned char key, int x, int y)
 	case '2':
 		yVal1 += 0.5;
 		break;
+	case '3':
+		yVal2 -= 0.5;
+		break;
+	case '4':
+		yVal2 += 0.5;
+		break;
+	case '5':
+		glDisable(GL_LIGHT0);
+		break;
+	case '6':
+		glDisable(GL_LIGHT1);
+		break;
+	case '7':
+		glDisable(GL_LIGHT2);
+		break;
     case 't':
         scale(1);
         break;
@@ -261,12 +277,13 @@ void lab2::spot(double a, double b, double c, double d, double e, double f)
     std::cout << "Spot light" << std::endl;
     glEnable(GL_LIGHT0);
     GLfloat mat_specular[] = 
-	{ static_cast<GLfloat>(0.3),
+	{ 
+	  static_cast<GLfloat>(0.3),
 	  static_cast<GLfloat>(1.0),
 	  static_cast<GLfloat>(0.3),
 	  static_cast<GLfloat>(1.0)
    	};
-    GLfloat mat_shininess[] = { 30.0 };
+    GLfloat mat_shininess[] = { 70.0 };
     GLfloat light_position[] =
    	{
 		static_cast<GLfloat>(a),
@@ -343,7 +360,7 @@ void lab2::spot3(double a, double b, double c, double d, double e, double f)
 	  static_cast<GLfloat>(7.8),
 	  static_cast<GLfloat>(2.3)
    	};
-    GLfloat mat_shininess[] = { 60.0 };
+    GLfloat mat_shininess[] = { 50.0 };
     GLfloat light_position[] =
    	{
 		static_cast<GLfloat>(a),
@@ -365,7 +382,7 @@ void lab2::spot3(double a, double b, double c, double d, double e, double f)
     glMaterialfv(GL_FRONT, GL_SHININESS, mat_shininess);
     
 	// Definig spotlight attributes
-    glLightf(GL_LIGHT2,GL_SPOT_CUTOFF,100.0);
+    glLightf(GL_LIGHT2,GL_SPOT_CUTOFF,120.0);
     glLightf(GL_LIGHT2,GL_SPOT_EXPONENT,2.0);
     glLightfv(GL_LIGHT2,GL_SPOT_DIRECTION,spotDir);
     glEnable(GL_COLOR_MATERIAL);
