@@ -19,7 +19,7 @@ namespace
 //Converts a four-character array to an integer, using little-endian form
 int toInt(const char* bytes)
 {
-    return (int)(((unsigned char)bytes[3] << 24) |
+   return (int)(((unsigned char)bytes[3] << 24) |
                  ((unsigned char)bytes[2] << 16) |
                  ((unsigned char)bytes[1] << 8) |
                  (unsigned char)bytes[0]);
@@ -197,11 +197,3 @@ Image* loadBMP(const char* filename)
     input.close();
     return new Image(pixels2.release(), width, height);
 }
-
-
-
-
-
-
-
-

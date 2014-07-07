@@ -69,13 +69,13 @@ void lab2::initGL(void)
 	
 	std::cout << "load image from file texture1.bmp" << std::endl;
     image  = loadBMP("texture1.bmp");
-	std::cout << "load image from file texture2.bmp" << std::endl;
-	img = loadBMP("texture2.bmp");
-	std::cout << "load image from file texture3.bmp" << std::endl;
-	img1 = loadBMP("texture3.bmp");
-	_textureId[0] = loadTexture(image);
-	_textureId[1] = loadTexture(img);
-	_textureId[2] = loadTexture(img1);
+    std::cout << "load image from file texture2.bmp" << std::endl;
+    img = loadBMP("texture2.bmp");
+    std::cout << "load image from file texture3.bmp" << std::endl;
+    img1 = loadBMP("texture3.bmp");
+    _textureId[0] = loadTexture(image);
+    _textureId[1] = loadTexture(img);
+    _textureId[2] = loadTexture(img1);
 
     glEnable(GL_LIGHTING);
     glEnable(GL_LIGHT0);

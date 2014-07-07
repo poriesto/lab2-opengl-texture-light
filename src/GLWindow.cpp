@@ -1,4 +1,4 @@
-#include "../include/GLWindow.hpp"
+#include "../include/GLWindow.h"
 void GLWindow::initMainwnd(int argc, std::string argv)
 {
     char *ar[argv.size()];

@@ -1,7 +1,7 @@
 #ifndef LAB2_H
 #define LAB2_H
 
-#include "GLWindow.hpp"
+#include "GLWindow.h"
 #include "imageloader.h"
 
 GLuint loadTexture(Image* image);

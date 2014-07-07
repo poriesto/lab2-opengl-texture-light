@@ -14,7 +14,7 @@ int main()
     int argc = 3;
     unsigned int mode = GLUT_DOUBLE|GLUT_RGBA;
     Rect rct;
-    rct.w = 640; rct.h = 480;
+    rct.w = 1280; rct.h = 720;
     lab2* lab = new lab2(0, mode);
 	cout << "Program launched" << endl;
 
@@ -22,6 +22,5 @@ int main()
     lab->setinitPosition(10, 10);
     lab->setwidthheight(rct);
     lab->show(argc, argv);
-
     return 0;
 }
