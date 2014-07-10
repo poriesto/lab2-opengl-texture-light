@@ -1,3 +1,8 @@
+/*
+	File: lab2.h
+	Author: poriesto
+	Description: class implement window with gl object
+*/
 #ifndef LAB2_H
 #define LAB2_H
 

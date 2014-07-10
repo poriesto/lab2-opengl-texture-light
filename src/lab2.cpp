@@ -35,9 +35,8 @@ void lab2::render(void)
 
     glPushMatrix();
     spot(yVal,1.0,1.5,1.0,1.0,1.0);
-	spot2(yVal1,2.0,3.0,2.0,2.0,2.0);
-	spot3(yVal2,3.0,0.0,2.0,2.0,2.0);
-	//spot3(yVal2,0.0,2.0,3.0,3.0,3.0);
+    spot2(yVal1,2.0,3.0,2.0,2.0,2.0);
+    spot3(yVal2,3.0,0.0,2.0,2.0,2.0);
     draw();
 
     glPopMatrix();
@@ -46,28 +45,28 @@ void lab2::render(void)
 
 void lab2::initGL(void)
 {
-	std::cout << "Initializete GL" << std::endl;
+    std::cout << "Initializete GL" << std::endl;
     xRot = -30; yRot = 0; zRot = 0; 
-	xTra = 0; yTra = 0; zTra = 0;
+    xTra = 0; yTra = 0; zTra = 0;
     nSca = 0.2f;
 	
-	std::cout << "Setup params for cylinder" << std::endl;
+    std::cout << "Setup params for cylinder" << std::endl;
     stacks = 25; slices = 25;
     xCenterCylinder = 0; yCenterSphere = 0; zCenterCylinder = 0;
     baseRad = 1.0; topRad = 1.0; cyheight = 3;
     cylinder = gluNewQuadric();
 
-	std::cout << "Setup params for conus" << std::endl;
+    std::cout << "Setup params for conus" << std::endl;
     xCenterConus = 0; yCenterConus = 0; zCenterConus = 3;
     conusRad = 1.0; coheight = 3;
     conus = gluNewQuadric();
 
-	std::cout << "Setup params for sphere" << std::endl;
+    std::cout << "Setup params for sphere" << std::endl;
     xCenterSphere = 0; yCenterSphere = 0; zCenterSphere = 0;
     spRad = 1.0;
     sphere = gluNewQuadric();
 	
-	std::cout << "load image from file texture1.bmp" << std::endl;
+    std::cout << "load image from file texture1.bmp" << std::endl;
     image  = loadBMP("texture1.bmp");
     std::cout << "load image from file texture2.bmp" << std::endl;
     img = loadBMP("texture2.bmp");
@@ -79,8 +78,8 @@ void lab2::initGL(void)
 
     glEnable(GL_LIGHTING);
     glEnable(GL_LIGHT0);
-	glEnable(GL_LIGHT1);
-	glEnable(GL_LIGHT2);
+    glEnable(GL_LIGHT1);
+    glEnable(GL_LIGHT2);
     glLightModelf(GL_LIGHT_MODEL_TWO_SIDE, GL_TRUE);
     glViewport(0,0, rect.w, rect.h);
 
@@ -92,8 +91,8 @@ void lab2::initGL(void)
     glEnable(GL_MULTISAMPLE);
 
     delete image;
-	delete img;
-	delete img1;
+    delete img;
+    delete img1;
 }
 
 void lab2::disableLight(void)
@@ -106,19 +105,19 @@ void lab2::moveCamera(int dir)
 {
     switch(dir) {
     case 1:
-		std::cout << "Move camera to front" << std::endl;
+	std::cout << "Move camera to front" << std::endl;
         yTra += 0.05;
         break;
     case 2:
-		std::cout << "Move camera to back" << std::endl;
+	std::cout << "Move camera to back" << std::endl;
         yTra -= 0.05;
         break;
     case 3:
-		std::cout << "Move camera to left" << std::endl;
+	std::cout << "Move camera to left" << std::endl;
         xTra -= 0.05;
         break;
     case 4:
-		std::cout << "Move camera to right" << std::endl;
+	std::cout << "Move camera to right" << std::endl;
         xTra += 0.05;
         break;
     }
@@ -128,22 +127,18 @@ void lab2::rotate(int dir)
 {
     switch(dir) {
     case 1:
-        //up rotate
         std::cout << "Camera rotated up" << std::endl;
         xRot += 1.0;
         break;
     case 2:
-        //down rotate;
         std::cout << "Camera rotated down" << std::endl;
         xRot -= 1.0f;
         break;
     case 3:
-        //left
         std::cout << "Camera rotated left" << std::endl;
         zRot += 1.0;
         break;
     case 4:
-        //right
         std::cout << "Camera rotated right" << std::endl;
         zRot -= 1.0;
         break;
@@ -155,7 +150,7 @@ void lab2::keyboard(unsigned char key, int x, int y)
     std::cout << "Keyboard" << std::endl;
     switch(key) {
     case 'q':
-		close();
+	close();
 		break;
     case 's':
         moveCamera(2);
@@ -184,30 +179,30 @@ void lab2::keyboard(unsigned char key, int x, int y)
     case 'o':
         yVal = yVal + 0.5;
         break;
-	case 'p':
-		yVal = yVal - 0.5;
-		break;
-	case '1':
-		yVal1 -= 0.5;
-		break;
-	case '2':
-		yVal1 += 0.5;
-		break;
-	case '3':
-		yVal2 -= 0.5;
-		break;
-	case '4':
-		yVal2 += 0.5;
-		break;
-	case '5':
-		glDisable(GL_LIGHT0);
-		break;
-	case '6':
-		glDisable(GL_LIGHT1);
-		break;
-	case '7':
-		glDisable(GL_LIGHT2);
-		break;
+    case 'p':
+	yVal = yVal - 0.5;
+	break;
+    case '1':
+	yVal1 -= 0.5;
+	break;
+    case '2':
+	yVal1 += 0.5;
+	break;
+    case '3':
+	yVal2 -= 0.5;
+	break;
+    case '4':
+	yVal2 += 0.5;
+	break;
+    case '5':
+	glDisable(GL_LIGHT0);
+	break;
+    case '6':
+	glDisable(GL_LIGHT1);
+	break;
+    case '7':
+	glDisable(GL_LIGHT2);
+	break;
     case 't':
         scale(1);
         break;
@@ -221,11 +216,11 @@ void lab2::scale(int scale)
 {
     switch(scale) {
     case 1:
-		std::cout << "Increase scale" << std::endl;
+	std::cout << "Increase scale" << std::endl;
         nSca = static_cast<GLfloat>(nSca*1.1);
         break;
     case 2:
-		std::cout << "Decrease scale" << std::endl;
+	std::cout << "Decrease scale" << std::endl;
         nSca = static_cast<GLfloat>(nSca/1.1);
         break;
     }
@@ -233,36 +228,37 @@ void lab2::scale(int scale)
 
 void lab2::draw(void)
 {
-	std::cout << "Draw object" << std::endl;
+    //draw fuck
+    std::cout << "Draw object" << std::endl;
     //setup draw styles for objects
-	gluQuadricDrawStyle (cylinder, GL_POLYGON);
+    gluQuadricDrawStyle (cylinder, GL_POLYGON);
     gluQuadricDrawStyle (sphere, GL_POLYGON);
     gluQuadricDrawStyle (conus, GL_POLYGON);
-	//enable or disable texture on objects
+    //enable or disable texture on objects
     gluQuadricTexture(cylinder, GL_TRUE);
     gluQuadricTexture(sphere, GL_TRUE);
     gluQuadricTexture(conus, GL_TRUE);
 	
-	//draw cylinder
-	std::cout << "Draw cylinder" << std::endl;
-	glBindTexture(GL_TEXTURE_2D, _textureId[0]);
+    //draw cylinder
+    std::cout << "Draw cylinder" << std::endl;
+    glBindTexture(GL_TEXTURE_2D, _textureId[0]);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);	
-	glTranslatef(xCenterCylinder, yCenterCylinder, zCenterCylinder);
+    glTranslatef(xCenterCylinder, yCenterCylinder, zCenterCylinder);
     gluCylinder(cylinder, baseRad, topRad, cyheight, slices, stacks);
 
-	//draw sphere
-	std::cout << "Draw sphere" << std::endl;
+    //draw sphere
+    std::cout << "Draw sphere" << std::endl;
     glBindTexture(GL_TEXTURE_2D, _textureId[1]);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);	
-	glTranslatef(xCenterSphere, yCenterSphere, zCenterSphere);
-	gluSphere(sphere, spRad, slices, stacks);
+    glTranslatef(xCenterSphere, yCenterSphere, zCenterSphere);
+    gluSphere(sphere, spRad, slices, stacks);
 
-	//draw conus
-	std::cout << "Draw conus" << std::endl;
-	glBindTexture(GL_TEXTURE_2D, _textureId[2]);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    //draw conus
+    std::cout << "Draw conus" << std::endl;
+    glBindTexture(GL_TEXTURE_2D, _textureId[2]);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
     glTranslatef(xCenterConus, yCenterConus, zCenterConus);
     gluCylinder(conus, conusRad, 0, coheight, slices, stacks);
@@ -304,7 +300,7 @@ void lab2::spot(double a, double b, double c, double d, double e, double f)
     glMaterialfv(GL_FRONT, GL_SPECULAR, mat_specular);
     glMaterialfv(GL_FRONT, GL_SHININESS, mat_shininess);
     
-	// Definig spotlight attributes
+    // Definig spotlight attributes
     glLightf(GL_LIGHT0,GL_SPOT_CUTOFF,100.0);
     glLightf(GL_LIGHT0,GL_SPOT_EXPONENT,2.0);
     glLightfv(GL_LIGHT0,GL_SPOT_DIRECTION,spotDir);
@@ -314,7 +310,7 @@ void lab2::spot(double a, double b, double c, double d, double e, double f)
 void lab2::spot2(double a, double b, double c, double d, double e, double f)
 {
 	//blue light on schema
-	std::cout << "Second Spot light" << std::endl;
+    std::cout << "Second Spot light" << std::endl;
     glEnable(GL_LIGHT0);
     GLfloat mat_specular[] = 
 	{ static_cast<GLfloat>(6.5),
@@ -337,13 +333,13 @@ void lab2::spot2(double a, double b, double c, double d, double e, double f)
 		static_cast<GLfloat>(f)
 	};
 	
-	glShadeModel (GL_SMOOTH);
+    glShadeModel (GL_SMOOTH);
     glLightfv(GL_LIGHT1,GL_SPECULAR,mat_specular);
     glLightfv(GL_LIGHT1,GL_POSITION,light_position);
     glMaterialfv(GL_FRONT, GL_SPECULAR, mat_specular);
     glMaterialfv(GL_FRONT, GL_SHININESS, mat_shininess);
     
-	// Definig spotlight attributes
+    // Definig spotlight attributes
     glLightf(GL_LIGHT1,GL_SPOT_CUTOFF,100.0);
     glLightf(GL_LIGHT1,GL_SPOT_EXPONENT,2.0);
     glLightfv(GL_LIGHT1,GL_SPOT_DIRECTION,spotDir);
@@ -352,7 +348,7 @@ void lab2::spot2(double a, double b, double c, double d, double e, double f)
 
 void lab2::spot3(double a, double b, double c, double d, double e, double f)
 {
-	std::cout << "Third Spot light" << std::endl;
+    std::cout << "Third Spot light" << std::endl;
     glEnable(GL_LIGHT0);
     GLfloat mat_specular[] = 
 	{ static_cast<GLfloat>(12.5),
@@ -375,13 +371,13 @@ void lab2::spot3(double a, double b, double c, double d, double e, double f)
 		static_cast<GLfloat>(f)
 	};
 	
-	glShadeModel (GL_SMOOTH);
+    glShadeModel (GL_SMOOTH);
     glLightfv(GL_LIGHT2,GL_SPECULAR,mat_specular);
     glLightfv(GL_LIGHT2,GL_POSITION,light_position);
     glMaterialfv(GL_FRONT, GL_SPECULAR, mat_specular);
     glMaterialfv(GL_FRONT, GL_SHININESS, mat_shininess);
     
-	// Definig spotlight attributes
+    // Definig spotlight attributes
     glLightf(GL_LIGHT2,GL_SPOT_CUTOFF,120.0);
     glLightf(GL_LIGHT2,GL_SPOT_EXPONENT,2.0);
     glLightfv(GL_LIGHT2,GL_SPOT_DIRECTION,spotDir);

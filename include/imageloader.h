@@ -1,3 +1,8 @@
+/*
+	File: imageloader.h
+	Author: poriesto
+	Description: load bmp image as texture
+*/
 #ifndef IMAGE_LOADER_H_INCLUDED
 #define IMAGE_LOADER_H_INCLUDED
 

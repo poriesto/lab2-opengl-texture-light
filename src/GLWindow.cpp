@@ -1,13 +1,14 @@
 #include "../include/GLWindow.h"
+static GLWindow *app;
+
 void GLWindow::initMainwnd(int argc, std::string argv)
 {
     char *ar[argv.size()];
     app = this;
     for(unsigned int i = 0; i < argv.size(); i++)
     {
-        ar[i] = &argv[i];
+	    ar[i] = &argv[i];
     }
-
     glutInit(&argc,  ar);
     glutInitDisplayMode(mode);
     glutInitWindowSize(rect.w, rect.h);

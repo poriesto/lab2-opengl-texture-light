@@ -1,17 +1,20 @@
+/*
+	File: GLWindow.hpp
+	Author: poriesto
+	Description: parent class for window
+*/
 #include <GL/glut.h>
 #include <string>
 
 struct Rect {
     int w, h;
 };
-class GLWindow;
-static GLWindow *app;
 
 class GLWindow
 {
 protected:
     Rect rect;
-	std::string name;
+    std::string name;
     int subwindows, initPosx, initPosy, main;
     unsigned int mode;
     void initMainwnd(int argc, std::string argv);
