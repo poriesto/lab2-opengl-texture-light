@@ -1,1 +1,1 @@
-Some shit for opengl
+Some practice with OpenGL 3.0
